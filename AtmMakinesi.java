@@ -42,16 +42,18 @@ public class AtmMakinesi {
 
             selection = input.nextInt();
 
-            if (selection == 4) {
+        switch (selection){
+            case 4:
                 System.out.print("Çıkış yaptınız. Tekrar görüşmek üzere.");
                 return;
-            } else {
-                if (selection == 1) {
+            case 1:
                     System.out.println("Yatırmak istediğiniz tutarı giriniz:   ");
                     deposit = input.nextInt();
                     bakiye += deposit;
                     System.out.println("Bakiyeniz:  "+bakiye);
-                } else if (selection==2) {
+                    break;
+
+                    case 2:
                     System.out.print("Çekmek istediğiniz Tutar:   ");
                     draw = input.nextInt();
                     if(draw > bakiye){
@@ -61,10 +63,13 @@ public class AtmMakinesi {
                         bakiye -= draw;
                         System.out.println("Bakiyeniz:  "+bakiye);
                     }
-                } else if (selection==3) {
+                    break;
+
+                    case 3:
                     System.out.println("Güncel bakiyeniz:  "+bakiye);
+                    break;
                 }
-            }
+
         } while (selection != 4);
 
         // tüm işlemler bittiğinde kullanıcıyı uğurlamak için girilen son çıktı,
